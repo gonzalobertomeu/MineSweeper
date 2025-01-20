@@ -9,8 +9,8 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [tailwind(), react()],
   site: 'https://gonzalobertomeu.github.io',
-  base: 'minesweeper',
+  base: 'MineSweeper',
   redirects: {
-    '/': '/minesweeper/basic',
+    '/': '/MineSweeper/basic',
   }
 });
