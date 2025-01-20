@@ -8,7 +8,9 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
+  site: 'https://gonzalobertomeu.github.io',
+  base: 'minesweeper',
   redirects: {
-    '/': '/basic'
+    '/': '/minesweeper/basic',
   }
 });
