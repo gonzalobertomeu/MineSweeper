@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Navbar from "../components/nav/Navbar.astro"
+
+import { Game } from "../game/Game"
+
+export function getStaticPaths() {
+	return [
+	  {params: {type: 'basic'}},
+	  {params: {type: 'advance'}},
+	  {params: {type: 'expert'}},
+	];
+}
+  
+const {type} = Astro.params
+---
+
+<Layout>
+	<Navbar />
+	<div class="pt-4 pb-32 flex flex-row justify-center items-center overflow-y-auto">
+		<Game client:load gameType={type}/>
+	</div>
+</Layout>
