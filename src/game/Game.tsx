@@ -25,7 +25,7 @@ export const Game: React.FC<Props> = (props: Props) => {
         const fetchData = async () => {
             try {
                 setLoading(true)
-                const data = await fetch(`/api/${gameType ?? 'basic'}`)
+                const data = await fetch(`/MineSweeper/api/${gameType ?? 'basic'}`)
                 const {board, mines}: {board: ICell[][], mines: number} = await data.json()
     
                 const cells = board.map(row => row.map(cell => new Cell(cell.mine, cell.revealed, cell.flagged, cell.nearMines )))
